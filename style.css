@@ -1,0 +1,23 @@
+/*########defaults########*/
+
+nav,
+header,
+footer {
+    display:block;
+}
+
+body {
+    line-height: 1;
+    margin:0;
+}
+
+/*########nav bar########*/
+nav{
+    width:100%;
+    margin:0;
+}
+
+nav ul {
+    background-color: #eee;
+    overflow: hidden;
+}
