@@ -60,4 +60,18 @@ ul.topnav li.dropdownIcon {
         display: block;
         float: right;
     }
+
+    ul.topnav.responsive {
+        position: relative;
+    }
+
+    ul.topnav.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
 }
