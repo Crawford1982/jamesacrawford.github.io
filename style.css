@@ -46,3 +46,18 @@ ul.topnav li a:hover {
     background-color: #0080ff;
     color:#fff;
 }
+
+ul.topnav li.dropdownIcon {
+    display: none;
+}
+
+/* #########mobile######## */
+@media screen and (max-width: 680px) {
+    ul.topnav li:not(:nth-child(1)) {
+        display: none;
+    }
+    ul.topnav li.dropdownIcon {
+        display: block;
+        float: right;
+    }
+}
