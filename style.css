@@ -113,7 +113,16 @@ input[type="text"]{
     width: 400px;
     min-width: 100px;
     padding: 5px;
+    border-radius: 7px;
 }
+
+.videoContainer iframe {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
 
 /* #########mobile######## */
 @media screen and (max-width: 680px) {
@@ -148,5 +157,13 @@ input[type="text"]{
         width:100%;
         margin: 0;
     }
+    div.leftSide-col,
+    div.rightSide-col {
+        margin: 15px;
+    }
+    input[type="text"] {
+        width: 350px;
+    }
+
 }
 
