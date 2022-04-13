@@ -18,6 +18,13 @@ body {
     padding-bottom: 4%;
 }
 
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;;
+}
+
 /*########nav bar########*/
 nav{
     width:100%;
@@ -60,8 +67,7 @@ ul.topnav li.dropdownIcon {
 /* custom styles */
 
 #section-1-gradient {
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
-}
+    background: linear-gradient(#076dff, #65a5ff);
 
 /* #########mobile######## */
 @media screen and (max-width: 680px) {
