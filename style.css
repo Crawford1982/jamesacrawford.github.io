@@ -89,6 +89,13 @@ ul.topnav li.dropdownIcon {
 
 #section-1-gradient {
     background: linear-gradient(#076dff, #65a5ff);}
+    
+.leftSide-col {
+    margin-left: 30%;
+}
+.rightSide-col {
+    margin-left: 30%;
+}
 
 h1.large {
     color: #fff;
@@ -97,10 +104,15 @@ h1.large {
     line-height: 70px;
 }
 
+form h2 {
+    color: #fff;
+}
+
 input[type="text"]{
     font-size: 20px;
     width: 400px;
     min-width: 100px;
+    padding: 5px;
 }
 
 /* #########mobile######## */
@@ -132,4 +144,9 @@ input[type="text"]{
         display: block;
         text-align: left;
     }
+    .col-6 {
+        width:100%;
+        margin: 0;
+    }
 }
+
