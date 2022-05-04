@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
+
+	<link rel="icon" href="favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Merriweather&family=Montserrat&family=Poppins:wght@100&family=Roboto:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+
     <title>James Crawford | Software Developer</title>
 		<meta name="description" content="Portfolio">
 		<meta name="author" content="James Crawford">
@@ -12,57 +22,52 @@
 <body>
 
 
-
-<nav>
-	<ul class="topnav" id="dropdownClick">
-		<li><a class="active" href="#home">Home</a></li>
-		<li><a href="#news">News</a></li>
-		<li><a href="#contact">Contact</a></li>
-		<li><a href="#about">About</a></li>
-		<li class="topnav-right"><a href="#signup">Sign Up</a></li>
-		<li class="topnav-right"><a href="#signin">Sign In</a></li>
-		<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">☰</a></li>
-	</ul>
-</nav>
-
-<div class="container" id="section-1-gradient">
-	<div class="row">
-		<div class="col-6">
-			<div class="leftSide-col">
-				<h1 class="large">Crazy Radness</h1>
-				<h1 class="large">Made to be a Dev</h1>
-			</div>
-			<form>
-				<div class="leftSide-col">
-					<h2>Username</h2>
-					<input class="inputbox" name="username" type="text" placeholder="Username">
-					<h2>Password</h2>
-					<input class="inputbox" name="password" type="text" placeholder="Password">
-				</div>
-			</form>
-		</div>
-		<div class="col-6">
-			<div class="rightSide-col">
-				<div class="videoContainer">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/io-e8l_PPpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		</div>
-
-		</div>
-	</div>
-
+	<div class="top-container">
+        <img class="top-cloud" src="cloud.png" alt="cloud">
+        <h1>I'm James.</h1>
+        <h2>a programmer.</h2>
+        <img class="bottom-cloud" src="cloud.png" alt="cloud">
+        <img src="mountain.png" alt="mountain">
 </div>
+<div class="middle-container">
+    <div class="profile">
+      <img class="model" src="model.png" alt="">
+      <h2>Hello.</h2>
+      <p class="intro">I am an IOS and WebDeveloper. I'm the founder of not much..</p>
+    </div>
+    <hr>
+    <div class="skills">
+      <h2>My Skills.</h2>
+      <div class="skill-row">
+        <img class="coding" src="coding (1).png" alt="">
+        <h3>Design & Development</h3>
+        <p>I've always websites and wanted to build my own little games. over time i've gained the confidence to be able to turn into a career.</p>
+      </div>
+      <div class="skill-row">
+        <img class="laptop" src="computer.png" alt="">
+        <h3>Always Learning</h3>
+        <p>Because technology is always changing, the challenge to keep up to date and always build new skills makes this such a rewarding job.</p>
+      </div>
+    </div>
+    <hr>
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>If you want to talk about websites or coding.</h3>
+      <p class="contact-message">Love coding as much as i do? Let's talk about the cool stuff you would like to build!.</p>
+      <a class="btn" href="mailto:crawford1982@gmail.com">CONTACT ME</a>
+    </div>
+  </div>
+  
+  
+  <div class="bottom-container">
+    <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+    <a class="footer-link" href="https://twitter.com/">Twitter</a>
+    <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
+    <p class="copyright">© James Crawford.</p>
+  </div>
+  
+    
 
-
-<script>
-	function dropdownMenu (){
-		var x = document.getElementById("dropdownClick");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-		}
-	}
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
