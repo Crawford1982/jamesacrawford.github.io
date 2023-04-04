@@ -21,6 +21,7 @@ const game = new Phaser.Game(config);
 let character;
 let cursors;
 let axeGroup;
+let enemy;
 
 function preload() {
     this.load.image('sky', 'sky.png');
@@ -28,6 +29,9 @@ function preload() {
     this.load.spritesheet('axe', 'axe_spritesheet.png', { frameWidth: 32, frameHeight: 32 });
     this.load.image('background', 'background.png');
     this.load.image('ground', 'ground.png');
+    this.load.spritesheet('enemy', 'enemy_spritesheet.png', { frameWidth: 32, frameHeight: 32 });
+    this.load.image('deadCharacter', 'deadcharacter.png');
+
 }
 
 function create() {
@@ -57,6 +61,22 @@ function create() {
     character.setDepth(1);
 
     this.physics.add.collider(character, platforms);
+
+    enemy = this.physics.add.sprite(400, 450, 'enemy');
+    enemy.setBounce(0.2);
+    enemy.setCollideWorldBounds(true);
+
+    this.physics.add.collider(character, enemy, killEnemy, null, this);
+    this.physics.add.collider(enemy, platforms);
+
+    this.anims.create({
+        key: 'enemyMove',
+        frames: this.anims.generateFrameNumbers('enemy', { start: 0, end: 3 }),
+        frameRate: 10,
+        repeat: -1
+    });
+
+    enemy.anims.play('enemyMove', true);
 
     // Set camera to follow the character and match the new level width
     this.cameras.main.setBounds(0, 0, levelLength, this.sys.game.config.height);
@@ -120,6 +140,18 @@ function update() {
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
         throwAxe(this);
     }
+}
+
+function killEnemy(character, enemy) {
+    enemy.disableBody(true, true);
+    let deadCharacter = this.add.image(character.x, character.y, 'deadCharacter');
+    deadCharacter.setDepth(1);
+    character.disableBody(true, true);
+
+    setTimeout(() => {
+        deadCharacter.destroy();
+        character.enableBody(true, character.x, character.y, true, true);
+    }, 1000);
 }
 
 function throwAxe(scene) {
