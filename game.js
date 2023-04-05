@@ -21,9 +21,6 @@ const game = new Phaser.Game(config);
 let character;
 let cursors;
 let axeGroup;
-let patrolPoint1 = 300;
-let patrolPoint2 = 500;
-
 
 function preload() {
     this.load.image('sky', 'sky.png');
@@ -31,8 +28,6 @@ function preload() {
     this.load.spritesheet('axe', 'axe_spritesheet.png', { frameWidth: 32, frameHeight: 32 });
     this.load.image('background', 'background.png');
     this.load.image('ground', 'ground.png');
-    this.load.spritesheet('enemy', 'enemy_spritesheet.png', { frameWidth: 32, frameHeight: 32 });
-
 }
 
 function create() {
@@ -43,8 +38,6 @@ function create() {
     for (let i = 0; i < (4800 / backgroundWidth) + 1; i++) {
         this.add.image(i * backgroundWidth, 0, 'background').setOrigin(0, 0);
     }
-
-    
 
     const groundWidth = this.textures.get('ground').getSourceImage().width;
     const groundHeight = this.textures.get('ground').getSourceImage().height;
@@ -98,35 +91,12 @@ function create() {
         repeat: -1
     });
 
-    enemy = this.physics.add.sprite(400, 450, 'enemy');
-enemy.setBounce(0.2);
-enemy.setCollideWorldBounds(true);
-
-this.physics.add.collider(enemy, platforms);
-
-this.anims.create({
-    key: 'enemyMove',
-    frames: this.anims.generateFrameNumbers('enemy', { start: 0, end: 3 }),
-    frameRate: 10,
-    repeat: -1
-});
-
-enemy.anims.play('enemyMove', true);
-
-enemy.setVelocityX(200); // You can adjust the speed as needed
-
- 
-
     axeGroup = this.physics.add.group();
 
     this.input.keyboard.on('keydown_SPACE', function (event) {
         throwAxe(this);
     }, this);
-
-    this.physics.add.overlap(axeGroup, enemy, killEnemy, null, this);
-
 }
-
 
 function update() {
     if (cursors.left.isDown) {
@@ -150,15 +120,6 @@ function update() {
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
         throwAxe(this);
     }
-
-    // Enemy patrol code
-    if (enemy.x <= patrolPoint1) {
-        enemy.setVelocityX(100);
-        enemy.flipX = false;
-    } else if (enemy.x >= patrolPoint2) {
-        enemy.setVelocityX(-100);
-        enemy.flipX = true;
-    }
 }
 
 function throwAxe(scene) {
@@ -181,16 +142,4 @@ function throwAxe(scene) {
     setTimeout(() => {
         axe.destroy();
     }, 1500);
-}
-
-function killEnemy(axe, enemy) {
-    axe.disableBody(true, true);
-    let deadCharacter = this.add.image(enemy.x, enemy.y, 'deadCharacter');
-    deadCharacter.setDepth(1);
-    enemy.disableBody(true, true);
-
-    setTimeout(() => {
-        deadCharacter.destroy();
-        enemy.enableBody(true, enemy.x, enemy.y, true, true);
-    }, 1000);
 }

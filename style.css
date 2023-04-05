@@ -1,9 +1,78 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-  }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #FFA500;
+  padding: 10px;
+}
+.grid-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid #000;
+}
+
+h1{
+  align-content: center;
+}
+
+p{
+  align-content: center;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   
+}
+
+.grid-item {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  position: relative;
+}
+
+.round-button {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #ff9800;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive; /* You can use any retro-style font */
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #ff9800;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.round-button:hover {
+  background-color: #fff;
+  color: #ff9800;
+  border-color: #ff9800;
+}
+
+
