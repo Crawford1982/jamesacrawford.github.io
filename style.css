@@ -8,7 +8,29 @@
   overflow: hidden;
 }
 
+.stars-container {
+  position: relative;
+  width: 100%;
+  height: 10vh; /* Reduce the height to 50% */
+  perspective: 1000px;
+}
 
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes lightspeed {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translateZ(-1000px);
+  }
+}
 
 
 .grid-container {
