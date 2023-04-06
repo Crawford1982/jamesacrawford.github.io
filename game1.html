@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +13,11 @@
 <body>
    <!-- Add these buttons inside the body tag -->
 <div class="controls">
-    <button id="left-btn">Left</button>
-    <button id="right-btn">Right</button>
-    <button id="jump-btn">Jump</button>
+  <button class="left-button" onmousedown="startMovingLeft();" onmouseup="stopMovingLeft();">Left</button>
+  <button class="right-button" onmousedown="startMovingRight();" onmouseup="stopMovingRight();">Right</button>
+  <button class="jump-button" onmousedown="startJumping();" onmouseup="stopJumping();">Jump</button>
+  <button class="fire-button" onmousedown="startFiringAxe();" onmouseup="stopFiringAxe();">Fire Axe</button>
+  
   </div>
    
   

@@ -8,19 +8,6 @@
   overflow: hidden;
 }
 
-/* Add these styles to your existing CSS */
-.welcome-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 24px;
-  text-align: center;
-  z-index: 2; /* Make sure the text appears above the stars */
-}
-
-
 .stars-container {
   position: relative;
   width: 100%;
@@ -128,33 +115,63 @@ p{
   border-color: #ff9800;
 }
 
-/* Add these styles to your existing CSS */
+/* Add this code to your CSS file */
+.fire-button {
+  background-color: #ff9800;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.fire-button:hover {
+  background-color: #fff;
+  color: #ff9800;
+}
 .controls {
   position: fixed;
   bottom: 20px;
   left: 20px;
   display: flex;
-  justify-content: space-between;
-  width: 80%;
+  gap: 10px;
 }
 
-.controls button {
-  background-color: #4CAF50;
+.left-button,
+.right-button,
+.jump-button,
+.fire-button {
+  background-color: #ff9800;
   border: none;
   color: white;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  padding: 10px 24px;
-  border-radius: 5px;
+  margin: 4px 2px;
   cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-#jump-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.left-button:hover,
+.right-button:hover,
+.jump-button:hover,
+.fire-button:hover {
+  background-color: #fff;
+  color: #ff9800;
 }
-
 

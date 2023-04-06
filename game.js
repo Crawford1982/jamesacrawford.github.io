@@ -32,7 +32,7 @@ function preload() {
 
 function create() {
     this.add.image(400, 300, 'sky');
-
+    this.input.addPointer(2);
     const backgroundWidth = this.textures.get('background').getSourceImage().width;
 
     for (let i = 0; i < (4800 / backgroundWidth) + 1; i++) {
@@ -143,23 +143,66 @@ function throwAxe(scene) {
         axe.destroy();
     }, 1500);
 }
-// Add these functions to your existing JavaScript file
-const leftButton = document.getElementById("left-btn");
-const rightButton = document.getElementById("right-btn");
-const jumpButton = document.getElementById("jump-btn");
 
-function handleLeftButtonTouchStart() {
-  // Your code to move the character left
+// Add this function to your existing JavaScript file
+function resizeGameCanvas() {
+    const canvas = document.getElementById("gameCanvas");
+    const aspectRatio = canvas.width / canvas.height;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+  
+    if (windowWidth / windowHeight < aspectRatio) {
+      canvas.style.width = windowWidth + "px";
+      canvas.style.height = (windowWidth / aspectRatio) + "px";
+    } else {
+      canvas.style.width = (windowHeight * aspectRatio) + "px";
+      canvas.style.height = windowHeight + "px";
+    }
+  }
+  
+  // Call the resizeGameCanvas function on window resize events
+  window.addEventListener("resize", resizeGameCanvas);
+  
+  // Call the resizeGameCanvas function on page load
+  resizeGameCanvas();
+  
+  function fireAxe() {
+    // Implement the axe shooting logic here
+    // For example, you can call the existing function responsible for firing axes
+    // fireAxe(); // Replace with the actual function name if it's different
+  }
+
+  let moveLeftInterval, moveRightInterval, jumpInterval, fireAxeInterval;
+
+function startMovingLeft() {
+  moveLeftInterval = setInterval(moveLeft, 100); // Adjust interval duration as needed
 }
 
-function handleRightButtonTouchStart() {
-  // Your code to move the character right
+function stopMovingLeft() {
+  clearInterval(moveLeftInterval);
 }
 
-function handleJumpButtonTouchStart() {
-  // Your code to make the character jump
+function startMovingRight() {
+  moveRightInterval = setInterval(moveRight, 100); // Adjust interval duration as needed
 }
 
-leftButton.addEventListener("touchstart", handleLeftButtonTouchStart);
-rightButton.addEventListener("touchstart", handleRightButtonTouchStart);
-jumpButton.addEventListener("touchstart", handleJumpButtonTouchStart);
+function stopMovingRight() {
+  clearInterval(moveRightInterval);
+}
+
+function startJumping() {
+  // You may need to modify this depending on your game's jump implementation
+  jumpInterval = setInterval(jump, 100); // Adjust interval duration as needed
+}
+
+function stopJumping() {
+  clearInterval(jumpInterval);
+}
+
+function startFiringAxe() {
+  fireAxeInterval = setInterval(fireAxe, 100); // Adjust interval duration as needed
+}
+
+function stopFiringAxe() {
+  clearInterval(fireAxeInterval);
+}
