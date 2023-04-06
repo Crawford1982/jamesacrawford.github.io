@@ -143,3 +143,23 @@ function throwAxe(scene) {
         axe.destroy();
     }, 1500);
 }
+// Add these functions to your existing JavaScript file
+const leftButton = document.getElementById("left-btn");
+const rightButton = document.getElementById("right-btn");
+const jumpButton = document.getElementById("jump-btn");
+
+function handleLeftButtonTouchStart() {
+  // Your code to move the character left
+}
+
+function handleRightButtonTouchStart() {
+  // Your code to move the character right
+}
+
+function handleJumpButtonTouchStart() {
+  // Your code to make the character jump
+}
+
+leftButton.addEventListener("touchstart", handleLeftButtonTouchStart);
+rightButton.addEventListener("touchstart", handleRightButtonTouchStart);
+jumpButton.addEventListener("touchstart", handleJumpButtonTouchStart);
