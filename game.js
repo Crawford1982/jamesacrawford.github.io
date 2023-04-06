@@ -21,6 +21,7 @@ const game = new Phaser.Game(config);
 let character;
 let cursors;
 let axeGroup;
+let targets;
 
 function preload() {
     this.load.image('sky', 'sky.png');
@@ -28,6 +29,11 @@ function preload() {
     this.load.spritesheet('axe', 'axe_spritesheet.png', { frameWidth: 32, frameHeight: 32 });
     this.load.image('background', 'background.png');
     this.load.image('ground', 'ground.png');
+    this.load.image('stone_platform', 'stone_platform.png');
+    this.load.image('wood_platform', 'wood_platform.png');
+    this.load.image('target', 'target.png');
+    
+
 }
 
 function create() {
@@ -49,6 +55,18 @@ function create() {
     for (let i = 0; i < (levelLength / groundWidth) + 1; i++) {
         platforms.create(i * groundWidth, this.sys.game.config.height - groundHeight + 8, 'ground');
     }
+
+    platforms.create(600, 300, 'wood_platform');
+    platforms.create(700, 400, 'stone_platform');
+    platforms.create(200, 200, 'wood_platform');
+    platforms.create(400, 300, 'stone_platform');
+    platforms.create(100, 450, 'wood_platform');
+    platforms.create(300, 400, 'stone_platform');
+
+    targets = this.physics.add.staticGroup();
+    targets.create(300, 369, 'target');
+    targets.create(700, 368, 'target');
+    targets.create(200, 168, 'target');
 
     character = this.physics.add.sprite(100, 450, 'character');
     character.setBounce(0.2);
